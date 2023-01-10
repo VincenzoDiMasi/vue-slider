@@ -30,11 +30,11 @@
     <div id="carousel">
       <i id="prev" class="bi bi-arrow-left-circle-fill"></i>
       <div class="gallery">
-        <figure>
-           <img src="" alt="">
+        <figure v-for="(pic, i) in pictures" :class="{'active' : i === currentIndex}">
+           <img :src="pic.image" :alt="pic.title">
            <figcaption>
-             <h2></h2>
-             <h3></h3>
+             <h2>{{pic.title}}</h2>
+             <h3>{{pic.text}}</h3>
            </figcaption>
          </figure>
       </div>
