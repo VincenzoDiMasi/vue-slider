@@ -25,77 +25,92 @@ const pictures = [
     }
   ];
   
-  //FUNZIONI
-  function changePic(target) {
-    images[currentActiveIndex].classList.remove('active');
-    thumbs[currentActiveIndex].classList.remove('active');
+const app = Vue.createApp({
+    data () {
+        return {
+
+        }
+    }
+});
+
+app.mount('#root');
+
+
+
+
+
+
+//   //FUNZIONI
+//   function changePic(target) {
+//     images[currentActiveIndex].classList.remove('active');
+//     thumbs[currentActiveIndex].classList.remove('active');
   
-  if (target === 'next') {
-    currentActiveIndex++;
+//   if (target === 'next') {
+//     currentActiveIndex++;
   
-    if (currentActiveIndex === images.length) currentActiveIndex = 0;
+//     if (currentActiveIndex === images.length) currentActiveIndex = 0;
   
-  } else if (target === 'prev') {
-    currentActiveIndex--;
+//   } else if (target === 'prev') {
+//     currentActiveIndex--;
   
-    if (currentActiveIndex < 0) currentActiveIndex = images.length - 1;
-  } else {
-    currentActiveIndex = target;
-  }
+//     if (currentActiveIndex < 0) currentActiveIndex = images.length - 1;
+//   } else {
+//     currentActiveIndex = target;
+//   }
   
-  images[currentActiveIndex].classList.add('active');
-  thumbs[currentActiveIndex].classList.add('active');
-  }
-  
-  
+//   images[currentActiveIndex].classList.add('active');
+//   thumbs[currentActiveIndex].classList.add('active');
+//   }
   
   
-  //Prendo gli elementi dal DOM
-  const gallery = document.querySelector('#carousel .gallery');
-  const thumbGallery = document.getElementById('thumbnails');
   
-  //Dato che le immagini di galley e thumbnails sono le stesse, unifico il processo
-  let galleryElements = '';
-  let thumbsElements = '';
   
-   for (let i = 0; i < pictures.length; i++) {
-    const img = `<img src="${pictures[i].image}" alt=""></img>`
-    thumbsElements += img;
+//   //Prendo gli elementi dal DOM
+//   const gallery = document.querySelector('#carousel .gallery');
+//   const thumbGallery = document.getElementById('thumbnails');
   
-    galleryElements += `
-          <figure>
-            <img src="${pictures[i].image}" alt="">
-            <figcaption>
-              <h2>${pictures[i].title}</h2>
-              <h3>${pictures[i].text}</h3>
-            </figcaption>
-          </figure>
-    `;
-   }
+//   //Dato che le immagini di galley e thumbnails sono le stesse, unifico il processo
+//   let galleryElements = '';
+//   let thumbsElements = '';
   
-   //Stampo in pagina
-   gallery.innerHTML = galleryElements;
-   thumbGallery.innerHTML = thumbsElements;
+//    for (let i = 0; i < pictures.length; i++) {
+//     const img = `<img src="${pictures[i].image}" alt=""></img>`
+//     thumbsElements += img;
   
-  //Recupero immagini e thumbnails
-  const images = document.querySelectorAll('.gallery figure');
-  const thumbs = document.querySelectorAll('#thumbnails img');
+//     galleryElements += `
+//           <figure>
+//             <img src="${pictures[i].image}" alt="">
+//             <figcaption>
+//               <h2>${pictures[i].title}</h2>
+//               <h3>${pictures[i].text}</h3>
+//             </figcaption>
+//           </figure>
+//     `;
+//    }
   
-  //Aggiungo la classe Active alla prima immagine/thumbnails
-  let currentActiveIndex = 0;
-  images[currentActiveIndex].classList.add('active');
-  thumbs[currentActiveIndex].classList.add('active');
+//    //Stampo in pagina
+//    gallery.innerHTML = galleryElements;
+//    thumbGallery.innerHTML = thumbsElements;
   
-  //Recupero i bottoni 
-  const prev = document.getElementById('prev');
-  const next = document.getElementById('next');
+//   //Recupero immagini e thumbnails
+//   const images = document.querySelectorAll('.gallery figure');
+//   const thumbs = document.querySelectorAll('#thumbnails img');
   
-  //Aggancio evento al bottone next
-  next.addEventListener('click', function() {
-    changePic('next');
-  });
+//   //Aggiungo la classe Active alla prima immagine/thumbnails
+//   let currentActiveIndex = 0;
+//   images[currentActiveIndex].classList.add('active');
+//   thumbs[currentActiveIndex].classList.add('active');
   
-  //Aggancio evento al bottone prev
-  prev.addEventListener('click', function() {
-    changePic('prev');
-  });
+//   //Recupero i bottoni 
+//   const prev = document.getElementById('prev');
+//   const next = document.getElementById('next');
+  
+//   //Aggancio evento al bottone next
+//   next.addEventListener('click', function() {
+//     changePic('next');
+//   });
+  
+//   //Aggancio evento al bottone prev
+//   prev.addEventListener('click', function() {
+//     changePic('prev');
+//   });
