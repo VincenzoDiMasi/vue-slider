@@ -53,7 +53,6 @@ const app = Vue.createApp({
         },
         setCurrentIndex(index) {
             this.currentIndex = index;
-            console.log(this.curentIndex)
           } 
     }
 });
