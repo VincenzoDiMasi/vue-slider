@@ -50,88 +50,12 @@ const app = Vue.createApp({
                 this.currentIndex = target;
              }
 
-        }
+        },
+        setCurrentIndex(index) {
+            this.currentIndex = index;
+            console.log(this.curentIndex)
+          } 
     }
 });
 
 app.mount('#root');
-
-
-
-
-
-
-//   //FUNZIONI
-//   function changePic(target) {
-//     images[currentActiveIndex].classList.remove('active');
-//     thumbs[currentActiveIndex].classList.remove('active');
-  
-//   if (target === 'next') {
-//     currentActiveIndex++;
-  
-//     if (currentActiveIndex === images.length) currentActiveIndex = 0;
-  
-//   } else if (target === 'prev') {
-//     currentActiveIndex--;
-  
-//     if (currentActiveIndex < 0) currentActiveIndex = images.length - 1;
-//   } else {
-//     currentActiveIndex = target;
-//   }
-  
-//   images[currentActiveIndex].classList.add('active');
-//   thumbs[currentActiveIndex].classList.add('active');
-//   }
-  
-  
-  
-  
-//   //Prendo gli elementi dal DOM
-//   const gallery = document.querySelector('#carousel .gallery');
-//   const thumbGallery = document.getElementById('thumbnails');
-  
-//   //Dato che le immagini di galley e thumbnails sono le stesse, unifico il processo
-//   let galleryElements = '';
-//   let thumbsElements = '';
-  
-//    for (let i = 0; i < pictures.length; i++) {
-//     const img = `<img src="${pictures[i].image}" alt=""></img>`
-//     thumbsElements += img;
-  
-//     galleryElements += `
-//           <figure>
-//             <img src="${pictures[i].image}" alt="">
-//             <figcaption>
-//               <h2>${pictures[i].title}</h2>
-//               <h3>${pictures[i].text}</h3>
-//             </figcaption>
-//           </figure>
-//     `;
-//    }
-  
-//    //Stampo in pagina
-//    gallery.innerHTML = galleryElements;
-//    thumbGallery.innerHTML = thumbsElements;
-  
-//   //Recupero immagini e thumbnails
-//   const images = document.querySelectorAll('.gallery figure');
-//   const thumbs = document.querySelectorAll('#thumbnails img');
-  
-//   //Aggiungo la classe Active alla prima immagine/thumbnails
-//   let currentActiveIndex = 0;
-//   images[currentActiveIndex].classList.add('active');
-//   thumbs[currentActiveIndex].classList.add('active');
-  
-//   //Recupero i bottoni 
-//   const prev = document.getElementById('prev');
-//   const next = document.getElementById('next');
-  
-//   //Aggancio evento al bottone next
-//   next.addEventListener('click', function() {
-//     changePic('next');
-//   });
-  
-//   //Aggancio evento al bottone prev
-//   prev.addEventListener('click', function() {
-//     changePic('prev');
-//   });
